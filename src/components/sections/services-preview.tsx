@@ -66,7 +66,7 @@ export default function ServicesPreview() {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full group">
+              <Button variant="outline" className="w-full group border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-medium">
                 Ver detalles
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -82,9 +82,9 @@ export default function ServicesPreview() {
           className="text-center"
         >
           <Link href="/servicios">
-            <Button size="lg" className="group">
+            <Button size="lg" className="bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold group">
               Ver todos los servicios
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>

@@ -109,9 +109,9 @@ export default function Testimonials() {
           className="text-center"
         >
           <Link href="/contacto">
-            <Button size="lg" className="group">
+            <Button size="lg" className="bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold group">
               Únete a nuestros clientes satisfechos
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
         </motion.div>
