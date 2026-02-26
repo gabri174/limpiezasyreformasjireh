@@ -1,14 +1,30 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle, Star, Phone, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { heroImages } from '@/data/images'
 
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0">
+        <div 
+          className="w-full h-full bg-cover bg-center opacity-20 transition-opacity duration-1000"
+          style={{ backgroundImage: `url('${heroImages[currentImageIndex]}')` }}
+        />
+      </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">

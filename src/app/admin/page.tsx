@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Upload, Image as ImageIcon, Trash2, Eye, Plus, LogOut, Settings, Users, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { uploadImage, deleteImage } from '@/lib/blob'
+import { galleryImages } from '@/data/images'
 
 interface GalleryImage {
   id: string
@@ -24,23 +25,8 @@ export default function AdminPage() {
   const [newImageCategory, setNewImageCategory] = useState<'reforma' | 'limpieza'>('reforma')
 
   useEffect(() => {
-    // Cargar imágenes iniciales (simuladas)
-    setImages([
-      {
-        id: '1',
-        url: '/images/gallery/reforma-1.jpg',
-        title: 'Reforma integral cocina',
-        category: 'reforma',
-        uploadedAt: '2024-01-15'
-      },
-      {
-        id: '2',
-        url: '/images/gallery/limpieza-1.jpg',
-        title: 'Limpieza post-obra oficina',
-        category: 'limpieza',
-        uploadedAt: '2024-01-10'
-      }
-    ])
+    // Cargar imágenes reales del Blob Storage
+    setImages(galleryImages)
   }, [])
 
   const handleLogin = (e: React.FormEvent) => {

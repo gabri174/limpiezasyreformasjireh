@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Wrench, Sparkles, Home, Building, Car, Shield, CheckCircle, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import GallerySection from '@/components/sections/gallery'
 
 const reformasServices = [
   {
@@ -237,6 +238,8 @@ export default function ServiciosPage() {
           </motion.div>
         </div>
       </section>
+
+      <GallerySection />
     </main>
   )
 }
