@@ -24,11 +24,6 @@ export async function uploadImage(file: File, folder: string = 'gallery') {
   }
 }
 
-export function getBlobUrl(filename: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
-  return `${baseUrl}/${filename}`;
-}
-
 export async function deleteImage(url: string) {
   try {
     const response = await fetch(`/api/upload?url=${encodeURIComponent(url)}`, {
