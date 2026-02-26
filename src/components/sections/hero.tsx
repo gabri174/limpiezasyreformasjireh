@@ -103,7 +103,7 @@ export default function Hero() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
             Transformamos tu
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light">
               espacio con excelencia
             </span>
           </motion.h1>
@@ -125,7 +125,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
           >
             <Link href="https://wa.link/1w3hdx" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg group">
+              <Button size="lg" className="bg-gradient-to-r from-primary to-primary-light hover:from-dark hover:to-primary text-white border-0 px-8 py-4 text-lg group shadow-lg">
                 Solicitar Presupuesto
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>

@@ -10,9 +10,9 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'md', ...props }, ref) => {
     const variants = {
-      default: 'bg-accent text-white hover:bg-accent/90',
-      outline: 'border border-border bg-transparent hover:bg-accent hover:text-white',
-      ghost: 'hover:bg-accent hover:text-white'
+      default: 'bg-primary text-white hover:bg-primary-light shadow-sm hover:shadow-md transition-shadow',
+      outline: 'border border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-all',
+      ghost: 'text-primary hover:bg-primary/10 hover:text-dark transition-colors'
     }
 
     const sizes = {
@@ -24,7 +24,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         className={cn(
-          'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
+          'inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
           variants[variant],
           sizes[size],
           className

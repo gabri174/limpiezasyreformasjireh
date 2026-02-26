@@ -9,13 +9,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        accent: 'var(--accent)',
-        muted: 'var(--muted)',
-        border: 'var(--border)',
+        // Paleta principal moderna y minimalista
+        primary: '#404f68',      // Azul grisáceo principal - confianza y profesionalismo
+        secondary: '#777777',    // Gris medio - neutral y elegante
+        dark: '#4a4a4a',         // Gris oscuro - seriedad y confianza
+        darker: '#333333',       // Gris muy oscuro - contrastes fuertes
+        
+        // Colores semánticos basados en la paleta
+        background: '#ffffff',   // Blanco fresco - limpieza y minimalismo
+        foreground: '#333333',   // Texto principal
+        muted: '#777777',        // Texto secundario
+        accent: '#404f68',       // Elementos destacados
+        border: '#e5e5e5',       // Bordes sutiles
+        
+        // Variaciones para diseño moderno
+        'primary-light': '#5a6b88',
+        'primary-lighter': '#7a8ba8',
+        'secondary-light': '#999999',
+        'secondary-dark': '#555555',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

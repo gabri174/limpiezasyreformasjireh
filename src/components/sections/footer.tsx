@@ -10,18 +10,18 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4">
               Limpiezas y Reformas Jireh
             </h3>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-gray-200 mb-4 max-w-md leading-relaxed">
               Empresa con 5 años de experiencia, caracterizada por la responsabilidad y acabados finos. 
               En limpieza, resaltamos por el compromiso y bienestar del cliente.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
                 <Twitter className="h-5 w-5" />
               </a>
             </div>

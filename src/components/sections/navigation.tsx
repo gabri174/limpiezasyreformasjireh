@@ -43,10 +43,12 @@ export default function Navigation() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>Llamar ahora</span>
-            </Button>
+            <Link href="tel:+34613354770">
+              <Button className="flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+                <Phone className="h-4 w-4" />
+                <span>+34 613 35 47 70</span>
+              </Button>
+            </Link>
           </div>
 
           <div className="md:hidden">
