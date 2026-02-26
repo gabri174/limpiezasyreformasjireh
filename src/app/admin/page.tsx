@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Upload, Image as ImageIcon, Trash2, Eye, Plus, LogOut, Settings, Users, FileText } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { uploadImage, deleteImage } from '@/lib/blob'
 
 interface GalleryImage {
   id: string
@@ -66,11 +67,14 @@ export default function AdminPage() {
 
     setUploading(true)
     
-    // Simulación de subida
-    setTimeout(() => {
+    try {
+      // Subir a Vercel Blob
+      const folder = newImageCategory === 'reforma' ? 'gallery/reformas' : 'gallery/limpieza'
+      const imageUrl = await uploadImage(selectedFile, folder)
+      
       const newImage: GalleryImage = {
         id: Date.now().toString(),
-        url: URL.createObjectURL(selectedFile),
+        url: imageUrl,
         title: newImageTitle,
         category: newImageCategory,
         uploadedAt: new Date().toISOString().split('T')[0]
@@ -80,13 +84,28 @@ export default function AdminPage() {
       setSelectedFile(null)
       setNewImageTitle('')
       setNewImageCategory('reforma')
+      alert('Imagen subida exitosamente')
+    } catch (error) {
+      console.error('Error subiendo imagen:', error)
+      alert('Error al subir la imagen. Revisa la consola para más detalles.')
+    } finally {
       setUploading(false)
-    }, 2000)
+    }
   }
 
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: string) => {
     if (confirm('¿Estás seguro de eliminar esta imagen?')) {
-      setImages(images.filter(img => img.id !== id))
+      const image = images.find(img => img.id === id)
+      if (image) {
+        try {
+          await deleteImage(image.url)
+          setImages(images.filter(img => img.id !== id))
+          alert('Imagen eliminada exitosamente')
+        } catch (error) {
+          console.error('Error eliminando imagen:', error)
+          alert('Error al eliminar la imagen')
+        }
+      }
     }
   }
 
