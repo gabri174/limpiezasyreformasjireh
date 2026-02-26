@@ -3,16 +3,23 @@ import { put } from '@vercel/blob'
 
 export async function POST(request: NextRequest) {
   try {
+    // Configurar CORS
+    const headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, DELETE',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    }
+
     const formData = await request.formData()
     const file = formData.get('file') as File
     const folder = formData.get('folder') as string || 'gallery'
 
     if (!file) {
-      return NextResponse.json({ error: 'No se proporcionó ningún archivo' }, { status: 400 })
+      return NextResponse.json({ error: 'No se proporcionó ningún archivo' }, { status: 400, headers })
     }
 
     if (!process.env.BLOB_READ_WRITE_TOKEN) {
-      return NextResponse.json({ error: 'BLOB_READ_WRITE_TOKEN no configurado' }, { status: 500 })
+      return NextResponse.json({ error: 'BLOB_READ_WRITE_TOKEN no configurado' }, { status: 500, headers })
     }
 
     const filename = `${folder}/${Date.now()}-${file.name}`
@@ -21,10 +28,11 @@ export async function POST(request: NextRequest) {
       token: process.env.BLOB_READ_WRITE_TOKEN,
     })
 
-    return NextResponse.json({ url: blob.url })
+    return NextResponse.json({ url: blob.url }, { headers })
   } catch (error) {
     console.error('Error en upload:', error)
-    return NextResponse.json({ error: 'Error subiendo la imagen' }, { status: 500 })
+    const errorMessage = error instanceof Error ? error.message : 'Error desconocido'
+    return NextResponse.json({ error: 'Error subiendo la imagen: ' + errorMessage }, { status: 500 })
   }
 }
 
