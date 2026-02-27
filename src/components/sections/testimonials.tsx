@@ -36,7 +36,7 @@ const stats = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,11 +45,11 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
             Lo que dicen nuestros clientes
           </h2>
-          <p className="text-xl text-secondary max-w-3xl mx-auto">
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación
+          <p className="text-xl text-[#777777] max-w-3xl mx-auto">
+            La satisfacción de nuestros clientes es nuestro mejor testimonio
           </p>
         </motion.div>
 
@@ -61,21 +61,19 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-muted/30 rounded-2xl p-8 relative"
+              className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-200"
             >
-              <Quote className="w-8 h-8 text-accent/20 mb-4" />
-              <p className="text-secondary mb-6 italic">
-                "{testimonial.content}"
+              <Quote className="w-8 h-8 text-[#404f68] mb-4" />
+              <p className="text-[#4a4a4a] mb-6 leading-relaxed">
+                {testimonial.content}
               </p>
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-accent font-semibold">
-                    {testimonial.name.charAt(0)}
-                  </span>
+                <div className="w-12 h-12 bg-[#404f68] rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                  {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-secondary">{testimonial.role}</p>
+                  <h4 className="font-semibold text-[#333333]">{testimonial.name}</h4>
+                  <p className="text-[#777777] text-sm">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -91,10 +89,10 @@ export default function Testimonials() {
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-[#404f68] mb-2">
                 {stat.number}
               </div>
-              <div className="text-secondary">
+              <div className="text-[#777777]">
                 {stat.label}
               </div>
             </div>
@@ -109,7 +107,7 @@ export default function Testimonials() {
           className="text-center"
         >
           <Link href="/contacto">
-            <Button size="lg" className="bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold group">
+            <Button size="lg" className="bg-[#404f68] text-white hover:bg-[#4a4a4a] shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold group">
               Únete a nuestros clientes satisfechos
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>

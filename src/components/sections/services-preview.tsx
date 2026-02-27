@@ -22,7 +22,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,10 +31,10 @@ export default function ServicesPreview() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#333333] mb-4">
             Nuestros Servicios
           </h2>
-          <p className="text-xl text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-[#777777] max-w-3xl mx-auto">
             Ofrecemos soluciones integrales para reformas y limpieza con la más alta calidad
           </p>
         </motion.div>
@@ -47,26 +47,26 @@ export default function ServicesPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-200"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-6">
-                <service.icon className="w-8 h-8 text-accent" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#404f68]/10 rounded-full mb-6">
+                <service.icon className="w-8 h-8 text-[#404f68]" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl font-bold text-[#333333] mb-4">
                 {service.title}
               </h3>
-              <p className="text-secondary mb-6">
+              <p className="text-[#777777] mb-6">
                 {service.description}
               </p>
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-foreground">
-                    <div className="w-2 h-2 bg-accent rounded-full mr-3"></div>
+                  <li key={featureIndex} className="flex items-center text-[#4a4a4a]">
+                    <div className="w-2 h-2 bg-[#404f68] rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full group border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 font-medium">
+              <Button variant="outline" className="w-full group border-[#404f68] text-[#404f68] hover:bg-[#404f68] hover:text-white transition-all duration-300 font-medium">
                 Ver detalles
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -82,7 +82,7 @@ export default function ServicesPreview() {
           className="text-center"
         >
           <Link href="/servicios">
-            <Button size="lg" className="bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold group">
+            <Button size="lg" className="bg-[#404f68] text-white hover:bg-[#4a4a4a] shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg font-semibold group">
               Ver todos los servicios
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
