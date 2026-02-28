@@ -44,7 +44,7 @@ export default function Navigation() {
 
           <div className="hidden md:block">
             <Link href="tel:+34613354770">
-              <Button className="flex items-center gap-2 shadow-sm hover:shadow-md transition-shadow">
+              <Button className="flex items-center gap-2 bg-[#404f68] text-white hover:bg-[#4a4a4a] shadow-sm hover:shadow-md transition-shadow">
                 <Phone className="h-4 w-4" />
                 <span>+34 613 35 47 70</span>
               </Button>

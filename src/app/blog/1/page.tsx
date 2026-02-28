@@ -227,67 +227,37 @@ export default function BlogPostPage() {
                   </div>
                 </section>
 
-                <section className="bg-gradient-to-r from-[#404f68]/10 to-[#4a4a4a]/10 rounded-xl p-8 border border-[#404f68]/20">
-                  <h2 className="text-2xl font-bold text-[#333333] mb-4">
-                    🎯 Consejos SEO para tu web "Limpiezas y Reformas Jireh"
-                  </h2>
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#404f68] mb-2">Palabras Clave:</h3>
-                      <p className="text-[#4a4a4a]">
-                        Asegúrate de incluir en el texto frases como "reformas integrales en Valencia", 
-                        "presupuesto reforma baño" y "empresa de reformas de confianza".
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#404f68] mb-2">Imágenes de Calidad:</h3>
-                      <p className="text-[#4a4a4a]">
-                        Usa fotos Reales de tus trabajos "Antes y Después". Nombra los archivos de imagen 
-                        como reforma-integral-piso-jireh.jpg (evita nombres genéricos como IMG_4882).
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-lg font-semibold text-[#404f68] mb-2">Llamada a la Acción (CTA):</h3>
-                      <p className="text-[#4a4a4a]">
-                        Al final del blog, pon un botón claro: "Solicita tu presupuesto gratuito hoy mismo"
-                      </p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                    <h2 className="text-2xl font-bold text-[#333333] mb-4">
+                      ¿Listo para transformar tu hogar?
+                    </h2>
+                    <p className="text-[#777777] mb-6 max-w-2xl mx-auto">
+                      Nuestro equipo de expertos está listo para ayudarte a planificar y ejecutar 
+                      la reforma integral de tus sueños.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Link href="/contacto">
+                        <Button size="lg" className="bg-[#404f68] text-white hover:bg-[#4a4a4a]">
+                          Solicita tu presupuesto gratuito hoy mismo
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </Button>
+                      </Link>
+                      <Link href="tel:+34613354770">
+                        <Button variant="outline" size="lg" className="border-[#404f68] text-[#404f68] hover:bg-[#404f68] hover:text-white">
+                          <Phone className="mr-2 h-5 w-5" />
+                          +34 613 35 47 70
+                        </Button>
+                      </Link>
                     </div>
                   </div>
-                </section>
+                </motion.div>
               </motion.div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center"
-          >
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-              <h2 className="text-2xl font-bold text-[#333333] mb-4">
-                ¿Listo para transformar tu hogar?
-              </h2>
-              <p className="text-[#777777] mb-6 max-w-2xl mx-auto">
-                Nuestro equipo de expertos está listo para ayudarte a planificar y ejecutar 
-                la reforma integral de tus sueños.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contacto">
-                  <Button size="lg" className="bg-[#404f68] text-white hover:bg-[#4a4a4a]">
-                    Solicita tu presupuesto gratuito hoy mismo
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="tel:+34613354770">
-                  <Button variant="outline" size="lg" className="border-[#404f68] text-[#404f68] hover:bg-[#404f68] hover:text-white">
-                    <Phone className="mr-2 h-5 w-5" />
-                    +34 613 35 47 70
-                  </Button>
-                </Link>
-              </div>
             </div>
           </motion.div>
         </div>
